@@ -1,0 +1,116 @@
+body{
+    background-image: url("5870236.jpg");
+    background-repeat:no-repeat; 
+    background-size:cover;
+}
+
+.login{
+    width: 400px;
+    height: 200px;
+    background: 20px 20px;
+    border: 2px solid #e9d7d7;
+    border-bottom-left-radius: 20px;
+    border-bottom-width: 20px;
+    background-color: #e9d7d7;
+    display: block;
+    align-content: center;
+    align-items: center;
+    left: 10%;
+    position: absolute;
+    padding: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.regiser{
+    width: 400px;
+    height: 300px;
+    background: 20px 20px;
+    border: 2px solid #e9d7d7;
+    border-bottom-left-radius: 20px;
+    border-bottom-width: 20px;
+    background-color: #e9d7d7;
+    display: block;
+    align-content: center;
+    align-items: center;
+    left: 10%;
+    position: absolute;
+    padding: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#fname,#inname,#ID,#inID,#password,#inpass,#email{
+    display: block;
+    margin: 2px;
+    padding: 5px;
+    position: relative;
+    width: 80%;
+    color: black;
+
+}
+#fname,#ID,#password,#email
+{
+    color: firebrick;
+    font-weight: bold;
+}
+#sub{
+    color:rgb(243, 244, 244);
+    background-color: #ca3939;
+    width: 200px;
+    height: 30px;
+    font-weight: bold;
+    font-weight: bold;
+    position: relative;
+    left: 20%;
+    padding: 2px;
+    margin: 2px;
+}
+#sub1{
+    background: none;
+    display: inline;
+    border: none;
+}
+#sub0{
+    background: none;
+    display: inline;
+    border: none;
+    font-size: 21px;
+}
+
+
+#sub2,#sub3{
+    color:rgb(255, 255, 255);
+    background-color: #a12222;
+    width: 200px;
+    height: 30px;
+    font-weight: bold;
+    font-weight: bold;
+    position: relative;
+    left: 20%;
+    padding: 2px;
+    margin: 2px;
+
+}
+
+#sub2:hover,#sub3:hover{
+    color: rgb(25, 47, 48);
+    text-decoration:double;
+    font-weight:800;
+}
+a{
+    text-decoration:none;
+    font-size: 20px;
+    color: #a12222;
+}
+a:hover{
+    text-decoration:double;
+    font-size: 20px;
+    color: #c46c6c;
+    text-shadow:rgb(60, 19, 21);
+    text-shadow:1px 1px;
+
+}
