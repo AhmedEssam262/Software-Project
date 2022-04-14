@@ -1,10 +1,7 @@
 /*.................C++ Program to Implement FCFS ( First Come First Serve ) CPU SCheduling Algorithm.....................
 FCFS - A Non Preemptive Algorithm
 This Program works for same as well as different arrival times
-Video Explanation: https://www.youtube.com/watch?v=M9Hj6u3H2tA&list=PLVKIC9j3jSYtCEAffM_51qVWeQus70cqc&index=7
-
 */
-
 #include<iostream>
 #include <algorithm>
 #include<iomanip>
@@ -35,6 +32,7 @@ bool comparatorPID(struct process_struct a, struct process_struct b)
     int y = b.pid;
     return x < y;
 }
+
 int main()
 {
     int n;
@@ -73,6 +71,45 @@ int main()
     length_cycle = ps[n - 1].ct - ps[0].start_time;
     //sort so that process ID in output comes in Original order (just for interactivity)
     sort(ps, ps + n, comparatorPID);
+    //Gantt Chart
+    int i, j;
+    // print top bar
+    printf(" ");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < ps[i].bt; j++) cout<<"--";
+        cout<<" ";
+    }
+    cout<<"\n|";
+
+    // printing process id in the middle
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < ps[i].bt - 1; j++) cout<<" ";
+        cout<<ps[i].pid;
+        for (j = 0; j < ps[i].bt - 1; j++) cout<<" ";
+        cout<<"|";
+    }
+    cout<<"\n ";
+    // printing bottom bar
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < ps[i].bt; j++) cout<<"--";
+        cout<<" ";
+    }
+    cout<<"\n";
+
+    // printing the time line
+    cout<<"0";
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < ps[i].bt; j++) cout<<"  ";
+        if (ps[i].tat > 9) cout<<"\b"; // backspace : remove 1 space
+        cout<<ps[i].tat;
+
+    }
+    cout<<"\n";
+
+
+
+
+
 
     //Output
     cout << "\nProcess No.\tAT\tCPU Burst Time\tCT\tTAT\tWT\tRT\n";
