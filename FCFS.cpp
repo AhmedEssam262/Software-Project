@@ -1,6 +1,14 @@
+/*.................C++ Program to Implement FCFS ( First Come First Serve ) CPU SCheduling Algorithm.....................
+FCFS - A Non Preemptive Algorithm
+This Program works for same as well as different arrival times
+Video Explanation: https://www.youtube.com/watch?v=M9Hj6u3H2tA&list=PLVKIC9j3jSYtCEAffM_51qVWeQus70cqc&index=7
+
+*/
+
 #include<iostream>
 #include <algorithm>
 #include<iomanip>
+
 using namespace std;
 struct process_struct
 {
@@ -9,6 +17,7 @@ struct process_struct
     int bt;       //CPU Burst time 
     int ct, wt, tat, rt, start_time;   // Completion, waiting, turnaround, response time
 }ps[100];       //Array of structure to store the info of each process.   
+
 bool comparatorAT(struct process_struct a, struct process_struct b)
 {
     int x = a.at;
@@ -17,6 +26,7 @@ bool comparatorAT(struct process_struct a, struct process_struct b)
     //    if(x > y)
     //      return false;  // Apply sorting
     //    return true;   // no sorting
+
 }
 
 bool comparatorPID(struct process_struct a, struct process_struct b)
@@ -32,19 +42,14 @@ int main()
     cin >> n;
     float sum_tat = 0, sum_wt = 0, sum_rt = 0;
     int length_cycle, total_idle_time = 0;
-    float cpu_utilization;
 
     cout << fixed << setprecision(2);
     for (int i = 0; i < n; i++)
     {
-        cout << "\nEnter Process" << i << "Arrival Time: ";
+        cout << "\nEnter Process [ " << i << " ] Arrival Time: ";
         cin >> ps[i].at;
         ps[i].pid = i;
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        cout << "\nEnter Process" << i << "Burst Time: ";
+        cout << "\nEnter Process [ " << i << " ] Burst Time: ";
         cin >> ps[i].bt;
     }
 
@@ -75,12 +80,7 @@ int main()
         cout << i << "\t\t" << ps[i].at << "\t" << ps[i].bt << "\t\t" << ps[i].ct << "\t" << ps[i].tat << "\t" << ps[i].wt << "\t" << ps[i].rt << endl;
     cout << endl;
 
-    cpu_utilization = (float)(length_cycle - total_idle_time) / length_cycle;
-
     cout << "\nAverage Turn Around time= " << sum_tat / n;
     cout << "\nAverage Waiting Time= " << sum_wt / n;
-    cout << "\nAverage Response Time= " << sum_rt / n;
-    cout << "\nThroughput= " << n / (float)length_cycle;
-    cout << "\nCPU Utilization(Percentage)= " << cpu_utilization * 100;
     return 0;
 }
