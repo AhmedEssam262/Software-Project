@@ -8,3 +8,20 @@ body{
 h1{
     text-align: center;
 }
+.aa {
+    background-color: #f4511e;
+    float: right;
+    border: none;
+
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .aa:hover {opacity: 1}
