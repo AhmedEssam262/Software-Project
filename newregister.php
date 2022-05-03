@@ -69,6 +69,13 @@ if(isset($_POST['register'])){
     <link rel="stylesheet" href="project.css">
     </head>
 <body>
+        <div class="text-box">
+    <h1>Book Your Travel Now</h1>
+    <p>
+    Now you can book your travel with minimal cost and time just register and start new journey!    
+    </p>
+  </div>
+    
 <form method="POST" name="register" action="newregister.php">
     <div class="regiser">
         <label for="fname" id="fname"  >First Name</label>
