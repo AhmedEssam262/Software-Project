@@ -1,3 +1,11 @@
+<?php    
+        if(isset($_POST['button1'])) {
+            session_destroy();
+            header('location:login.php');
+            exit();
+    
+        }
+        ?>
 <!DOCTYPE html>
 <html lang="en">
     
@@ -9,6 +17,12 @@
     </head>
 <body>
 
+    <form method="post">
+        <input type="submit" name="button1"value="Logout" class="aa"/>
+    </form>
+
 </body>
+
 <h1>Welcome to our website</h1>
+
 </html>
