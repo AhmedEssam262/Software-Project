@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
 define('BASEPATH', true); //access connection script if you omit this line file will be blank
 
 $user= 'root';                                                              // The User To Connect

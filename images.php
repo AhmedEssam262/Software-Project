@@ -45,7 +45,14 @@
 	<form method="post">
         <input type="submit" name="button1"value="Logout" class="logout"/>
     </form>
-	<?php    
+	<?php      
+        session_start();
+        echo '
+        <h4 style="font-size: 12px; color : azure; float: left;margin: 5px 20px ">'. $_SESSION['username'].
+        '</h4>
+        ';
+       // echo  'Welcome' . $_SESSION['username'];
+
         if(isset($_POST['button1'])) {
             session_destroy();
             header('location:login.php');
@@ -65,7 +72,7 @@
 		<div class="layer">
 				<h3>Alex</h3>
 	        </div>	
-			<a href="Alexandria.php">
+			<a href="Alexandria.php" >
 				<input type="image" src="https://www.egypttoursportal.com/images/2017/11/Alexandria-City-Egypt-Egypt-Tours-Portal.jpg" 
 				name = "Alexandria" value = "Alexandria" width="100%">
 			</a>

@@ -1,6 +1,5 @@
 *{
-    margin: 0;
-    padding: 0;
+
     font-family: 'Poppins', sans-serif;
 }    
 body{
@@ -27,7 +26,7 @@ body{
 }
 .login{
     width: 400px;
-    height: 200px;
+    height: 220px;
     background: 20px 20px;
     background-image: url(images/rw.png);
     border: 2px solid #ffffff00;
@@ -182,6 +181,9 @@ nav img{
 }
 
 .logout {
+    float: right;
+    top :10px;
+    right: 10px;
     background:url('https://dh3vbjnk0bnfa.cloudfront.net/static/centralauth/images/btn-login-hover.png') no-repeat 5px 5px #484B4F;
     width: 100px;
     cursor:pointer;
@@ -195,8 +197,6 @@ nav img{
     margin:10px auto;
     float: right;
     left:10px;
-
-    
      /* Animations: */
      -webkit-transition-timing-function: ease-in-out;
      -webkit-transition-duration: .7s;
@@ -248,8 +248,8 @@ nav img{
 }
 .layer{
     background: transparent;
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 50%;
     position: absolute;
     top: 0;
     left: 0; 
@@ -311,4 +311,52 @@ h3{
     background-position: center;
     background-size: cover;
     position: relative; 
+}
+.feedback{
+    display: inline;
+    color: #151212;
+    position: relative; 
+
+    font-weight: bolder;
+    align-content: center;
+    left: 10%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.logoutin {
+    float: right;
+    top :50px;
+    right: -1400px;
+    position: absolute;
+    margin: 10px;
+    padding: 10px   ;
+    background:url('https://dh3vbjnk0bnfa.cloudfront.net/static/centralauth/images/btn-login-hover.png') no-repeat 5px 5px #484B4F;
+    width: 100px;
+    cursor:pointer;
+    border-radius:50px;
+    padding:10px 20px 10px 0;
+    color:White;
+    font-size:14px;
+    text-align:left;
+    text-indent:40px;
+    display:inline;;
+    margin:10px auto;
+    float: right;
+    left:10px;
+     /* Animations: */
+     -webkit-transition-timing-function: ease-in-out;
+     -webkit-transition-duration: .7s;
+     -webkit-transition-property: all;
+     
+     -moz-transition-timing-function: ease-in-out;
+     -moz-transition-duration: .4s;
+     -moz-transition-property: all;
+}
+.logoutin:hover {
+     background-image: url( 'https://dh3vbjnk0bnfa.cloudfront.net/static/centralauth/images/btn-login.png' );
+     background-position: 65px 5px;
+     text-indent: 15px;  
 }

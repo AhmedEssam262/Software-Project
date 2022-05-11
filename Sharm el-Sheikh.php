@@ -1,3 +1,76 @@
+<?php
+	session_start();
+	echo '
+	<h4 style="font-size: 12px; color : azure; float: left;margin: 5px 20px ">'. $_SESSION['username'].
+	'</h4>
+	';
+	$con = mysqli_connect("localhost","root","","software");
+	$user=$_SESSION['username'];
+
+	if(isset($_POST['button1'])) {
+		session_destroy();
+		header('location:login.php');
+		exit();
+	}
+	if(!isset($_SESSION['home'])) {
+	$_SESSION['home']="";
+	$_SESSION['tempEmail']="";
+	}
+
+	if ($con->connect_error) 
+	{
+  		die("Connection failed: " . $con->connect_error);
+	}
+
+	if(isset($_POST['submit']))
+	{
+		$hotel = $_POST['hotel'];
+		$time = $_POST['time'];
+
+		$sql = mysqli_query($con,"SELECT * FROM `guests` WHERE completed= 1 and username= '$user'");
+		$sql = mysqli_fetch_assoc($sql);
+		$Checker = isset($sql['completed']);
+
+		if  ($Checker == null) 
+		{
+			$query = "UPDATE guests Set city ='Sharm el-Sheikh',time='$time',completed=1,hotel='$hotel'where username= '$user' ";
+			$query_run = mysqli_query($con,$query);
+
+			if($query_run){
+				echo '<script type="text/javascript"> alert("Data Saved") </script>';
+			}
+
+			else
+			{
+				echo '<script type="text/javascript"> alert("Data Not Saved") </script>';
+			}
+		}		  		    
+		else 
+		{
+
+		    echo '<script type="text/javascript"> alert("Reservation has already been made") </script>';
+		}
+
+	}
+
+	if(isset($_POST['delete']))
+	{
+		$sql = mysqli_query($con,"SELECT * FROM `guests` WHERE completed= 1");
+		$sql = mysqli_fetch_assoc($sql);
+		$Checker = isset($sql['completed']);
+		if  ($Checker != null)
+		{
+			$query = "UPDATE guests Set city ='NULL',time='NULL',completed='NULL',hotel='NULL' where username= '$user' ";
+			$query_run = mysqli_query($con,$query);	
+			echo '<script type="text/javascript"> alert("Record deleted successfully") </script>';
+
+		}
+		else
+		{
+			echo '<script type="text/javascript"> alert("There is no Data") </script>';
+		}
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +81,15 @@
 </head>
 <body>
 <section class="sharm">
+<form method="post">
+		<input type="submit" name="button1"value="Logout" class="logoutin"/>
+	</form>
+	<?php
+		echo '
+		<h4 style="font-size: 16px; color : azure; float: right;margin: 5px 20px ">'."Welcome ".'<br>'. $_SESSION['username'].
+		'</h4>
+		';
+	?>
        <a href= "index.html"><img src="images/ssew.png"></a>
  <div class= "summbit">
 	<form action ="" method="POST">
@@ -43,75 +125,3 @@
 </body>
 </html>
 
-<?php
-
-	$con = mysqli_connect("localhost","root","","reservation");
-
-	session_start();
-	if(!isset($_SESSION['home'])) {
-	$_SESSION['home']="";
-	$_SESSION['tempEmail']="";
-	}
-
-	if ($con->connect_error) 
-	{
-  		die("Connection failed: " . $con->connect_error);
-	}
-
-	if(isset($_POST['submit']))
-	{
-		$hotel = $_POST['hotel'];
-		$time = $_POST['time'];
-
-		$sql = mysqli_query($con,"SELECT * FROM `items` WHERE completed= 1");
-		$sql = mysqli_fetch_assoc($sql);
-		$Checker = isset($sql['completed']);
-
-		if  ($Checker == null) 
-		{
-
-			$query = "INSERT INTO items(city,hotel,time,completed) VALUES('Sharm el-Sheikh','$hotel','$time',1)";
-			$query_run = mysqli_query($con,$query);
-
-			if($query_run){
-				echo '<script type="text/javascript"> alert("Data Saved") </script>';
-			}
-
-			else
-			{
-				echo '<script type="text/javascript"> alert("Data Not Saved") </script>';
-			}
-		}		  		    
-		else 
-		{
-
-		    echo '<script type="text/javascript"> alert("Reservation has already been made") </script>';
-		}
-
-	}
-
-	if(isset($_POST['delete']))
-	{
-		$sql = mysqli_query($con,"SELECT * FROM `items` WHERE completed= 1");
-		$sql = mysqli_fetch_assoc($sql);
-		$Checker = isset($sql['completed']);
-
-		if  ($Checker != null)
-		{
-			$sql = "DELETE FROM items WHERE completed= 1";
-			if ($con->query($sql) === TRUE)
-			{
-			echo '<script type="text/javascript"> alert("Record deleted successfully") </script>';
-			}
-			else
-			{
-				 echo "Error deleting record: " . $conn->error;
-			}
-		}
-		else
-		{
-			echo '<script type="text/javascript"> alert("There is no Data") </script>';
-		}
-	}
-	 session_destroy();
-?>
