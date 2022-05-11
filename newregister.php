@@ -54,9 +54,7 @@ if(isset($_POST['register'])){
     echo '<script type="text/javascript">alert("'.$error.'");</script>';
 }
      }
-
 ?>
-
 
 
 <!DOCTYPE html>
@@ -69,13 +67,10 @@ if(isset($_POST['register'])){
     <link rel="stylesheet" href="project.css">
     </head>
 <body>
-        <div class="text-box">
-    <h1>Book Your Travel Now</h1>
-    <p>
-    Now you can book your travel with minimal cost and time just register and start new journey!    
-    </p>
-  </div>
-    
+<section class="hea">
+     <nav>
+       <a href= "index.html"><img src="images/ssew.png"></a>
+    </section>  
 <form method="POST" name="register" action="newregister.php">
     <div class="regiser">
         <label for="fname" id="fname"  >First Name</label>
@@ -89,7 +84,6 @@ if(isset($_POST['register'])){
 
         <label for="Password" id="password" >Password</label>
         <input type="password" name="password" placeholder="Enter your Passwoed" id="inpass">
-
         <br>
         <input type="submit" id="sub2" name="register">Register</input>
         <br><br><br>

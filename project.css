@@ -1,13 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}    
 body{
-    background-image: url("5870236.jpg");
+    background-image: url("5870236.jpg"); 
     background-repeat:no-repeat; 
     background-size:cover;
 }
 .text-box{
     width: 90%;
-    color: rgb(0, 0, 0);
+    color: white;
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center; 
@@ -18,28 +23,29 @@ body{
 .text-box p{
     margin: 10px 0 40px;
     font-size: 14px;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 .login{
     width: 400px;
     height: 200px;
     background: 20px 20px;
-    border: 2px solid #e9d7d7;
+    background-image: url(images/rw.png);
+    border: 2px solid #ffffff00;
     border-bottom-left-radius: 20px;
     border-bottom-width: 20px;
-    background-color: #e9d7d7;
+    background-color: #b5aaccc9;
     display: block;
     align-content: center;
     align-items: center;
     left: 10%;
     position: absolute;
-    padding: 50px;
+    padding: 70px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.regiser{
+.register{
     width: 400px;
     height: 300px;
     background: 20px 20px;
@@ -129,4 +135,180 @@ a:hover{
     text-shadow:rgb(60, 19, 21);
     text-shadow:1px 1px;
 
+}
+#msg{
+    color: #a12222  ;
+    font-size: xx-small;
+}
+.head{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.644),rgba(0, 0, 0, 0.637)),url(images/unnamed.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;   
+}
+.hea{
+    min-height: 40vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.418),rgba(0, 0, 0, 0.329)),url(images/weq.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;   
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px; 
+}
+.nav-links{
+    flex:1;
+    text-align: right;
+}
+.nav-links ul li{
+   list-style: none;
+   display: inline;
+   padding: 8px 12px;
+   position: relative;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration:none ;
+    font-size: 13px;
+}
+
+.logout {
+    background:url('https://dh3vbjnk0bnfa.cloudfront.net/static/centralauth/images/btn-login-hover.png') no-repeat 5px 5px #484B4F;
+    width: 100px;
+    cursor:pointer;
+    border-radius:50px;
+    padding:10px 20px 10px 0;
+    color:White;
+    font-size:14px;
+    text-align:left;
+    text-indent:40px;
+    display:inline;;
+    margin:10px auto;
+    float: right;
+    left:10px;
+
+    
+     /* Animations: */
+     -webkit-transition-timing-function: ease-in-out;
+     -webkit-transition-duration: .7s;
+     -webkit-transition-property: all;
+     
+     -moz-transition-timing-function: ease-in-out;
+     -moz-transition-duration: .4s;
+     -moz-transition-property: all;
+   }
+   
+   .logout:hover {
+     background-image: url( 'https://dh3vbjnk0bnfa.cloudfront.net/static/centralauth/images/btn-login.png' );
+     background-position: 65px 5px;
+     text-indent: 15px;  
+   }
+.nav-links ul li::after{
+   content: '';
+   height: 3px;
+   width: 0%;
+   background: red;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+   width: 100%
+}   
+.Trav{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5px;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/sse.JPG);
+    background-position: center;
+    background-size: cover;
+    position: relative;   
+}
+.column{
+   flex-basis: 32%;
+   border-radius: 10px;
+   margin-bottom: 30px;
+   position: relative;
+   overflow: hidden; 
+}
+.column img{
+    width: 100%;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    transition: 0.5s ;
+}
+.layer:hover{
+    background: rgba(88, 7, 25, 0.685);
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.summbit{
+    width: 700px;
+    height: 30px;
+    background: 20px 20px;
+    background-image: url(images/qwq.png);
+    border: 2px solid #ffffff00;
+    border-bottom-left-radius: 20px;
+    border-bottom-width: 20px;
+    background-color: #b5aaccd0;
+    display: block;
+    align-content: center;
+    align-items: center;
+    left: 10%;
+    position: absolute;
+    padding: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.aswhead{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.644),rgba(0, 0, 0, 0.637)),url(images/aswan.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+}
+.sharm{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.644),rgba(0, 0, 0, 0.637)),url(images/sharm.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+}
+.alexhead{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(223, 201, 201, 0.233)),url(images/alex.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative; 
 }

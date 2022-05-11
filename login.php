@@ -1,24 +1,21 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-    
     
 <head>
     <title>Guest Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="style.css">
     </head>
 
 
 <body>
-    <div class="text-box">
-    <h1>Book Your Travel Now</h1>
-    <p>
-    Now you can book your travel with minimal cost and time just register and start new journey!    
-    </p>
-  </div>
+     <section class="head">
+       <a href= "index.html"><img src="images/ssew.png"></a>
+     </section> 
     
-<form method="POST" name="register" action="">
+    <form method="POST" name="register" action="">
     <div class="login">
         <label for="email" id="email" >E-mail</label>
         <input type="email" name="username" placeholder="Enter your E-mail" id="inpass">
@@ -36,7 +33,6 @@
     
 </form>
     </body>
-    
     
     
 </html>
@@ -64,6 +60,7 @@ $pass = $_POST['password'];
 
 if(empty($user) || empty($pass)) {
 $message = 'All field are required';
+echo "<h3>All field are required<h3>";
 } else {
 $query = $conn->prepare("SELECT username, password FROM guests WHERE 
 username=? AND password=? ");
@@ -72,12 +69,13 @@ $row = $query->fetch(PDO::FETCH_BOTH);
 
 if($query->rowCount() > 0) {
   $_SESSION['username'] = $user;
-  header('location:home.php');
+  header('location:images.php');
   session_destroy();
 
 
 } else {
   $message = "Username/Password is wrong";
+  echo "<h3>Username/Password is wrong</h3>";
 }
 
 
