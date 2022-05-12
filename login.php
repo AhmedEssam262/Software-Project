@@ -32,12 +32,27 @@
 <?php
 
 
-$dsn = 'mysql:host=localhost;dbname=software'; //Data source Name
+$dsn = 'mysql:localhost=$servername'; //Data source Name
 $username = 'root';
 $password = '';
 $options = array(PDO::MYSQL_ATTR_INIT_COMMAND=> 'SET NAMES utf8');
 
 $conn = new PDO($dsn, $username, $password,$options);
+
+
+
+$sql1 = "CREATE DATABASE software";
+// use exec() because no results are returned
+try{
+  $conn->exec($sql1);
+  }
+  catch(PDOException $e){
+  }
+
+
+  try{
+    $dsn = 'mysql:host=localhost;dbname=software'; //Data source Name
+    $conn = new PDO($dsn, $username, $password,$options);
 
  $sql = "CREATE TABLE guests   (
 	id INTeger(11)  AUTO_INCREMENT PRIMARY KEY,
@@ -55,7 +70,7 @@ $conn = new PDO($dsn, $username, $password,$options);
 
   // use exec() because no results are returned
   
-  try{
+
   $conn->exec($sql);
   }
   catch(PDOException $e){
